@@ -3,6 +3,7 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'war'
+//apply plugin: 'jetty'
 
 sourceCompatibility = 1.8
 
@@ -16,7 +17,7 @@ dependencies {
 
     // Spring boot
     compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: springBootVersion
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: springBootVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
 
     // Spring boot test
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:  springBootVersion
@@ -28,3 +29,14 @@ dependencies {
     // Other
     compile "org.projectlombok:lombok:1.16.6"
 }
+
+//// Embeded Jetty for testing
+//jettyRun {
+//    contextPath = "questionnaire"
+//    httpPort = 8080
+//}
+//
+//jettyRunWar {
+//    contextPath = "questionnaire"
+//    httpPort = 8080
+//}

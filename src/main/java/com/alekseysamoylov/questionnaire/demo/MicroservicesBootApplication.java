@@ -1,11 +1,26 @@
 package com.alekseysamoylov.questionnaire.demo;
 
-import org.springframework.boot.SpringBootConfiguration;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
-@SpringBootConfiguration
-@EnableAutoConfiguration
-@ComponentScan(value = {"com.alekseysamoylov.questionnaire"})
-public class MicroservicesBootApplication {
+@SpringBootApplication(scanBasePackages = {"com.alekseysamoylov.questionnaire"})
+public class MicroservicesBootApplication extends SpringBootServletInitializer {
+
+
+    /**
+     * Used when run as a JAR
+     */
+    public static void main(String[] args) {
+        SpringApplication.run(MicroservicesBootApplication.class);
+    }
+
+    /**
+     * Used when run as WAR
+     */
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(MicroservicesBootApplication.class);
+    }
 }
