@@ -1,18 +1,20 @@
 package com.alekseysamoylov.questionnaire.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Map;
 
 /**
- * Created by alekseysamoylov on 6/18/17.
+ * Test controller
  */
 @Controller
 public class TestController {
 
-    @RequestMapping("/hi")
-    @ResponseBody
-    public String hello() {
-        return "Hello World!";
+    @RequestMapping("/hi/{name}")
+    public String hello(Map<String, Object> model, @PathVariable String name) {
+        model.put("name", name);
+        return "hello";
     }
 }
