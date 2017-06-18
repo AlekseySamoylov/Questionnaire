@@ -14,17 +14,23 @@ repositories {
 dependencies {
 
     def springBootVersion = '1.5.3.RELEASE'
+    def hsqldbVersion = '2.4.0'
 
     // Spring boot
     compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: springBootVersion
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: springBootVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-rest', version: springBootVersion
 
+    // Database
+    compile group: 'org.hsqldb', name: 'hsqldb', version: hsqldbVersion
+
+
+    // Frontend
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: springBootVersion
 
-    // Spring boot test
-    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:  springBootVersion
-
     // Test
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:  springBootVersion
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
 

@@ -1,7 +1,7 @@
 package com.alekseysamoylov.questionnaire.demo;
 
 
-import com.alekseysamoylov.questionnaire.services.TestService;
+import com.alekseysamoylov.questionnaire.test.services.TestService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

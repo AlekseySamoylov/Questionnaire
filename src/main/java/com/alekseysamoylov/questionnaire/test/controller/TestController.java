@@ -1,4 +1,4 @@
-package com.alekseysamoylov.questionnaire.controller;
+package com.alekseysamoylov.questionnaire.test.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
